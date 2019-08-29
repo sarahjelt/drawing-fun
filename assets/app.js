@@ -41,10 +41,8 @@ function mousemove(event) {
 
 function colorChange(e) {
   var color = e.target.getAttribute('id');
-  console.log(color);
 
   ctx.strokeStyle = color;
-
 };
 
 

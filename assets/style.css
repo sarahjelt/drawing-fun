@@ -1,7 +1,20 @@
-* {
+html {
+  font-size: 16px;
+}
+body * {
   font-family: 'Comic Sans', Helvetica, sans-serif;
   box-sizing: border-box;
 }
+
+h1 {
+  font-size: 3rem;
+  font-weight: 600;
+}
+h2 {
+  font-size: 2.5rem;
+  letter-spacing: 0.1rem;
+}
+
 ul {
   display: flex;
   width: 100%;
@@ -11,7 +24,7 @@ ul {
 li {
   list-style: none;
   height: 100%;
-  margin: 15px;
+  margin: 15px 30px 15px 0;
   min-width: 40px;
 }
 #black {
