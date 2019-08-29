@@ -1,0 +1,28 @@
+* {
+  font-family: 'Comic Sans', Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+ul {
+  display: flex;
+  width: 100%;
+  height: 40px;
+  justify-content: stretch;
+}
+li {
+  list-style: none;
+  height: 100%;
+  margin: 15px;
+  min-width: 40px;
+}
+#black {
+  background-color: black;
+}
+#pink {
+  background-color: pink;
+}
+#blue {
+  background-color: blue;
+}
+#green {
+  background-color: green;
+}
