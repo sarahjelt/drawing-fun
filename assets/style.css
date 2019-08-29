@@ -15,6 +15,11 @@ h2 {
   letter-spacing: 0.1rem;
 }
 
+canvas {
+  border: 1px solid black;
+  margin: 40px 0;
+}
+
 ul {
   display: flex;
   width: 100%;
