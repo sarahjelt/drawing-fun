@@ -47,15 +47,20 @@ function colorChange(e) {
 
 };
 
+
 function sizeChange(e) {
   var size = e.target.getAttribute('id');
-  size = parseInt(size);
-  console.log(size);
 
-  ctx.lineWidth = size;
-  console.log(ctx.lineWidth);
-
+  if (size === "plus") {
+    ctx.lineWidth += 5;
+  } else {
+    ctx.lineWidth -=5
+    if (ctx.lineWidth < 1) {
+      ctx.lineWidth === 1;
+    }
+  }
 };
+
 canvas.addEventListener('mousedown', mousedown);
 canvas.addEventListener('mouseup', mouseup);
 canvas.addEventListener('mousemove', mousemove);
@@ -63,9 +68,7 @@ canvas.addEventListener('mousemove', mousemove);
 document.addEventListener('click', function(event) {
   if (event.target.classList.contains('color-clik')) {
     colorChange(event);
-    console.log(event.target);
   } else if (event.target.classList.contains('size-clik')) {
     sizeChange(event);
-    console.log(event.target);
   }
 }, false);
