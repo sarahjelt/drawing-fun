@@ -41,6 +41,7 @@ function mousemove(event) {
 
 function colorChange(e) {
   var color = e.target.getAttribute('id');
+  e.target.classList.add('active');
 
   ctx.strokeStyle = color;
 };
@@ -57,6 +58,8 @@ function sizeChange(e) {
       ctx.lineWidth === 1;
     }
   }
+  document.getElementById('brushSize').innerHTML = 'Brush size: ' + ctx.lineWidth;
+  console.log('got');
 };
 
 canvas.addEventListener('mousedown', mousedown);
@@ -65,8 +68,14 @@ canvas.addEventListener('mousemove', mousemove);
 
 document.addEventListener('click', function(event) {
   if (event.target.classList.contains('color-clik')) {
+    let active = document.querySelector('.active');
+    console.log(active);
+    if (active) {
+      active.classList.remove('active');
+    }
     colorChange(event);
   } else if (event.target.classList.contains('size-clik')) {
     sizeChange(event);
   }
 }, false);
+
