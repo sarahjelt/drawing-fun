@@ -70,7 +70,6 @@ function sizeChange(e) {
 canvas.addEventListener('mousedown', mousedown);
 canvas.addEventListener('mouseup', mouseup);
 canvas.addEventListener('mousemove', mousemove);
-canvas.addEventListener('save', save);
 
 document.addEventListener('click', function(event) {
   if (event.target.classList.contains('color-clik')) {
@@ -84,4 +83,3 @@ document.addEventListener('click', function(event) {
     sizeChange(event);
   }
 }, false);
-
