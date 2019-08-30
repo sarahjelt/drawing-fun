@@ -18,6 +18,7 @@ var shouldDraw;
 function mousedown(event) {
   if (event.button === main_mouse) {
     shouldDraw = true;
+    ctx.strokeStyle = document.getElementById('daColor').value;
     ctx.beginPath();
 
     let elementRect = event.target.getBoundingClientRect();
@@ -40,10 +41,10 @@ function mousemove(event) {
 };
 
 function colorChange(e) {
-  var color = e.target.getAttribute('id');
-  e.target.classList.add('active');
+  // var color = e.target.getAttribute('id');
+  // e.target.classList.add('active');
 
-  ctx.strokeStyle = color;
+  // ctx.strokeStyle = document.getElementById('daColor').value;
 };
 
 
@@ -58,13 +59,18 @@ function sizeChange(e) {
       ctx.lineWidth === 1;
     }
   }
-  document.getElementById('brushSize').innerHTML = 'Brush size: ' + ctx.lineWidth;
+  document.getElementById('brushSize').innerHTML = 'Brush size: ' + ctx.lineWidth + 'px';
   console.log('got');
 };
+
+// function save(e) {
+//   ctx.save();
+// }
 
 canvas.addEventListener('mousedown', mousedown);
 canvas.addEventListener('mouseup', mouseup);
 canvas.addEventListener('mousemove', mousemove);
+canvas.addEventListener('save', save);
 
 document.addEventListener('click', function(event) {
   if (event.target.classList.contains('color-clik')) {

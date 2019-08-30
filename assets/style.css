@@ -27,6 +27,16 @@ canvas {
 .size-container {
   margin: 30px 0;
 }
+.color-container {
+  display: flex;
+  align-items: center;
+}
+.size-clik {
+  cursor: pointer;
+  text-align: center;
+  font-size: 2rem;
+  border: 1px solid #000;
+}
 ul {
   display: flex;
   width: 100%;
@@ -34,6 +44,7 @@ ul {
   justify-content: stretch;
   align-items: center;
   line-height: 40px;
+  margin-top: 15px;
 }
 li {
   list-style: none;
@@ -41,7 +52,13 @@ li {
   margin: 15px 30px 15px 0;
   min-width: 40px;
 }
-#black {
+/* colors */
+input[type=color] {
+  border: 0;
+  height: 40px;
+  cursor: pointer;
+}
+/*#black {
   background-color: black;
 }
 #pink {
@@ -53,3 +70,12 @@ li {
 #green {
   background-color: green;
 }
+#red {
+  background-color: red;
+}
+#yellow {
+  background-color: yellow;
+}
+#orange {
+  background-color: orange;
+}*/
