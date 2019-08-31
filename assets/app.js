@@ -41,12 +41,12 @@ function mousemove(event) {
   }
 };
 
-function colorChange(e) {
+// function colorChange(e) {
   // var color = e.target.getAttribute('id');
   // e.target.classList.add('active');
 
   // ctx.strokeStyle = document.getElementById('daColor').value;
-};
+// };
 
 
 function sizeChange(e) {
@@ -62,7 +62,6 @@ function sizeChange(e) {
     }
   }
   document.getElementById('brushSize').innerHTML = 'Brush size: ' + ctx.lineWidth + 'px';
-  console.log('got');
   if (ctx.lineWidth === 1) {
     minus.classList.add('inactive');
   } else {
@@ -70,9 +69,13 @@ function sizeChange(e) {
   }
 };
 
-// function save(e) {
-//   ctx.save();
-// }
+function save(e) {
+  // var image = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream');
+  // window.location.href = image;
+  const save = document.getElementById('save');
+  save.setAttribute('download', 'my-drawing.png');
+  save.setAttribute('href', canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream'));
+}
 
 canvas.addEventListener('mousedown', mousedown);
 canvas.addEventListener('mouseup', mouseup);
@@ -88,6 +91,9 @@ document.addEventListener('click', function(event) {
     colorChange(event);
   } else if (event.target.classList.contains('size-clik')) {
     sizeChange(event);
+  } else if (event.target.id === 'save') {
+    save(event);
+    console.log('gotem');
   }
 }, false);
 
