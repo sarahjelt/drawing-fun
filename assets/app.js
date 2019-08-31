@@ -1,6 +1,7 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 const rect = canvas.getBoundingClientRect();
+const minus = document.getElementById('minus');
 
 canvas.width = rect.width;
 canvas.height = rect.height;
@@ -57,10 +58,16 @@ function sizeChange(e) {
     ctx.lineWidth -=5
     if (ctx.lineWidth < 1) {
       ctx.lineWidth === 1;
+      minus.classList.add('inactive');
     }
   }
   document.getElementById('brushSize').innerHTML = 'Brush size: ' + ctx.lineWidth + 'px';
   console.log('got');
+  if (ctx.lineWidth === 1) {
+    minus.classList.add('inactive');
+  } else {
+    minus.classList.remove('inactive');
+  }
 };
 
 // function save(e) {
@@ -83,3 +90,7 @@ document.addEventListener('click', function(event) {
     sizeChange(event);
   }
 }, false);
+
+window.onload = function() {
+  minus.classList.add('inactive');
+};

@@ -20,6 +20,7 @@ h2 {
 canvas {
   border: 1px solid black;
   margin: 30px 0;
+  cursor: url('data:image/svg+xml;utf8,<svg height="15" width="15" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg"><circle cx="7.5" cy="7.5" r="6.5" stroke="black" stroke-width="1" fill="none" /></svg>'), auto;
 }
 .active {
   border: 2px solid red;
@@ -36,6 +37,11 @@ canvas {
   text-align: center;
   font-size: 2rem;
   border: 1px solid #000;
+}
+.inactive {
+  color: lightgrey;
+  border: 1px solid lightgrey;
+  cursor: default;
 }
 ul {
   display: flex;
