@@ -70,8 +70,6 @@ function sizeChange(e) {
 };
 
 function save(e) {
-  // var image = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream');
-  // window.location.href = image;
   const save = document.getElementById('save');
   save.setAttribute('download', 'my-drawing.png');
   save.setAttribute('href', canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream'));
@@ -84,7 +82,6 @@ canvas.addEventListener('mousemove', mousemove);
 document.addEventListener('click', function(event) {
   if (event.target.classList.contains('color-clik')) {
     let active = document.querySelector('.active');
-    console.log(active);
     if (active) {
       active.classList.remove('active');
     }
@@ -93,7 +90,6 @@ document.addEventListener('click', function(event) {
     sizeChange(event);
   } else if (event.target.id === 'save') {
     save(event);
-    console.log('gotem');
   }
 }, false);
 
